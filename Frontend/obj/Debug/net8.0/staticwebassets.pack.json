@@ -1,0 +1,517 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Instagram.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Instagram.c050tqzwf0.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\010fb4db-5ff1-46e4-9542-4e12ed9fe762.png",
+      "PackagePath": "staticwebassets\\Uploads\\010fb4db-5ff1-46e4-9542-4e12ed9fe762.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\11bfa82d-0cf5-4ca0-9e1e-f6eecd1e6e1c.png",
+      "PackagePath": "staticwebassets\\Uploads\\11bfa82d-0cf5-4ca0-9e1e-f6eecd1e6e1c.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\1fd56272-a3fa-41f9-9740-3570b84ff61c.png",
+      "PackagePath": "staticwebassets\\Uploads\\1fd56272-a3fa-41f9-9740-3570b84ff61c.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\24cee098-347c-4a50-940a-d87534c75ab6.png",
+      "PackagePath": "staticwebassets\\Uploads\\24cee098-347c-4a50-940a-d87534c75ab6.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\4a578762-af70-4080-9655-2d5a504edd4c.png",
+      "PackagePath": "staticwebassets\\Uploads\\4a578762-af70-4080-9655-2d5a504edd4c.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\556e2f6e-39f6-4f51-904e-0a66928cae67.png",
+      "PackagePath": "staticwebassets\\Uploads\\556e2f6e-39f6-4f51-904e-0a66928cae67.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\60b58267-eac4-4dca-afff-164df0427c55.png",
+      "PackagePath": "staticwebassets\\Uploads\\60b58267-eac4-4dca-afff-164df0427c55.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\648f210b-3615-4bc4-a6ed-abaeb80f1462.png",
+      "PackagePath": "staticwebassets\\Uploads\\648f210b-3615-4bc4-a6ed-abaeb80f1462.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\6e5e61e4-e86a-4792-b448-088eb8c4972a.png",
+      "PackagePath": "staticwebassets\\Uploads\\6e5e61e4-e86a-4792-b448-088eb8c4972a.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\771c3a5e-716d-4884-a3e8-927c7db59294.png",
+      "PackagePath": "staticwebassets\\Uploads\\771c3a5e-716d-4884-a3e8-927c7db59294.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\798ece34-70f9-4b04-9808-f76db699473b.png",
+      "PackagePath": "staticwebassets\\Uploads\\798ece34-70f9-4b04-9808-f76db699473b.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\7c8380dc-3039-47b5-a719-51458e47f35f.png",
+      "PackagePath": "staticwebassets\\Uploads\\7c8380dc-3039-47b5-a719-51458e47f35f.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\827fd31b-d38c-4c06-9d33-def2af639345.png",
+      "PackagePath": "staticwebassets\\Uploads\\827fd31b-d38c-4c06-9d33-def2af639345.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\8735298d-69d1-4d4c-8221-141d8b21007c.png",
+      "PackagePath": "staticwebassets\\Uploads\\8735298d-69d1-4d4c-8221-141d8b21007c.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\8a2ac323-2a35-4318-952b-ba49af71f68c.png",
+      "PackagePath": "staticwebassets\\Uploads\\8a2ac323-2a35-4318-952b-ba49af71f68c.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\8e445ffc-4d96-4fdd-ad4a-0a7007fb4b23.png",
+      "PackagePath": "staticwebassets\\Uploads\\8e445ffc-4d96-4fdd-ad4a-0a7007fb4b23.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\8e51fc02-727a-4f5a-a48d-1d0e384b81fd.png",
+      "PackagePath": "staticwebassets\\Uploads\\8e51fc02-727a-4f5a-a48d-1d0e384b81fd.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\970f380c-7ee7-408a-95e7-c5ad341a3831.png",
+      "PackagePath": "staticwebassets\\Uploads\\970f380c-7ee7-408a-95e7-c5ad341a3831.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\9b76e363-bc4a-4745-a10d-382f78172b25.png",
+      "PackagePath": "staticwebassets\\Uploads\\9b76e363-bc4a-4745-a10d-382f78172b25.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\ac3e4111-2554-4649-95d6-07eaf8fd08b6.png",
+      "PackagePath": "staticwebassets\\Uploads\\ac3e4111-2554-4649-95d6-07eaf8fd08b6.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\acf427ac-a578-46ef-aaa1-39c347b599d6.png",
+      "PackagePath": "staticwebassets\\Uploads\\acf427ac-a578-46ef-aaa1-39c347b599d6.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\adaa828f-0247-4009-ad84-e9ec7ecc772a.png",
+      "PackagePath": "staticwebassets\\Uploads\\adaa828f-0247-4009-ad84-e9ec7ecc772a.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\b3c694a3-2bc0-4f69-b205-43d1b5ef3b7a.png",
+      "PackagePath": "staticwebassets\\Uploads\\b3c694a3-2bc0-4f69-b205-43d1b5ef3b7a.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\b47bebf0-7aed-40a0-9093-4ee8a20ab470.png",
+      "PackagePath": "staticwebassets\\Uploads\\b47bebf0-7aed-40a0-9093-4ee8a20ab470.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\be3ee5fc-e47c-48d5-a4c3-af4650f2fd73.png",
+      "PackagePath": "staticwebassets\\Uploads\\be3ee5fc-e47c-48d5-a4c3-af4650f2fd73.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\bf38964f-baf4-479d-9ad4-5e3e8a3b1ea1.png",
+      "PackagePath": "staticwebassets\\Uploads\\bf38964f-baf4-479d-9ad4-5e3e8a3b1ea1.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\d62cf278-c6c2-472d-9551-f609d3cb820f.png",
+      "PackagePath": "staticwebassets\\Uploads\\d62cf278-c6c2-472d-9551-f609d3cb820f.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\d6da6253-5589-487d-a4cd-8fefdfe106c0.png",
+      "PackagePath": "staticwebassets\\Uploads\\d6da6253-5589-487d-a4cd-8fefdfe106c0.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\Uploads\\ff866f2d-c9e1-4578-9e45-a0f215d6548e.png",
+      "PackagePath": "staticwebassets\\Uploads\\ff866f2d-c9e1-4578-9e45-a0f215d6548e.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\butterfly.jpeg",
+      "PackagePath": "staticwebassets\\images\\butterfly.jpeg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\defaultProfilePic.jpg",
+      "PackagePath": "staticwebassets\\images\\defaultProfilePic.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\flower.jpeg",
+      "PackagePath": "staticwebassets\\images\\flower.jpeg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\icons8-chat-bubble-50.png",
+      "PackagePath": "staticwebassets\\images\\icons8-chat-bubble-50.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\likes_blank.jpg",
+      "PackagePath": "staticwebassets\\images\\likes_blank.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\likes_fill.jpg",
+      "PackagePath": "staticwebassets\\images\\likes_fill.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\logo.jpg",
+      "PackagePath": "staticwebassets\\images\\logo.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\myspin.png",
+      "PackagePath": "staticwebassets\\images\\myspin.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\nature.jpeg",
+      "PackagePath": "staticwebassets\\images\\nature.jpeg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\noPostYet.png",
+      "PackagePath": "staticwebassets\\images\\noPostYet.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\pendingreq.png",
+      "PackagePath": "staticwebassets\\images\\pendingreq.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\postGrid.png",
+      "PackagePath": "staticwebassets\\images\\postGrid.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\prompt.jpg",
+      "PackagePath": "staticwebassets\\images\\prompt.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\reel.png",
+      "PackagePath": "staticwebassets\\images\\reel.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\reel_likes_blank.png",
+      "PackagePath": "staticwebassets\\images\\reel_likes_blank.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\reel_likes_fill.webp",
+      "PackagePath": "staticwebassets\\images\\reel_likes_fill.webp"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\spin.png",
+      "PackagePath": "staticwebassets\\images\\spin.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\images\\upload.jpg",
+      "PackagePath": "staticwebassets\\images\\upload.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\10.jpg",
+      "PackagePath": "staticwebassets\\temp\\10.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\butterfly.jpeg",
+      "PackagePath": "staticwebassets\\temp\\butterfly.jpeg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\final.jpg",
+      "PackagePath": "staticwebassets\\temp\\final.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\flower.jpeg",
+      "PackagePath": "staticwebassets\\temp\\flower.jpeg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\food_ordering_app.jpg",
+      "PackagePath": "staticwebassets\\temp\\food_ordering_app.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\icons8-chat-bubble-50.png",
+      "PackagePath": "staticwebassets\\temp\\icons8-chat-bubble-50.png"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\krishna11.jpg",
+      "PackagePath": "staticwebassets\\temp\\krishna11.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\krishna2.jpg",
+      "PackagePath": "staticwebassets\\temp\\krishna2.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\likes_fill.jpg",
+      "PackagePath": "staticwebassets\\temp\\likes_fill.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\logo1.jpg",
+      "PackagePath": "staticwebassets\\temp\\logo1.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\mountains.jpeg",
+      "PackagePath": "staticwebassets\\temp\\mountains.jpeg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\prompt.jpg",
+      "PackagePath": "staticwebassets\\temp\\prompt.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\radha2.jpg",
+      "PackagePath": "staticwebassets\\temp\\radha2.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\upload.jpg",
+      "PackagePath": "staticwebassets\\temp\\upload.jpg"
+    },
+    {
+      "Id": "E:\\My_work\\SEM7\\Project\\Instagram\\wwwroot\\temp\\video.mp4",
+      "PackagePath": "staticwebassets\\temp\\video.mp4"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Instagram.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Instagram.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Instagram.props",
+      "PackagePath": "build\\Instagram.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Instagram.props",
+      "PackagePath": "buildMultiTargeting\\Instagram.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Instagram.props",
+      "PackagePath": "buildTransitive\\Instagram.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

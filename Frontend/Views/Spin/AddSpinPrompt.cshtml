@@ -1,0 +1,91 @@
+﻿@model Instagram.Models.Response
+@{
+    ViewData["Title"] = "AddSpinPrompt";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f8f9fa, #dce3f0);
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .prompt-box {
+            background: white;
+            padding: 40px 50px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+            .prompt-box h2 {
+                color: #333;
+                margin-bottom: 15px;
+            }
+
+            .prompt-box p {
+                font-size: 18px;
+                color: #555;
+                margin-bottom: 25px;
+            }
+
+        @@keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="prompt-box">
+        @if (Model != null)
+        {
+            @if (Model.success)
+            {
+                <h2>
+                    <img src="~/images/prompt.jpg" height="80" width="80" style="vertical-align: middle;" />
+                    &nbsp;Today's Prompt
+                </h2>
+                <p>@Model.msg</p>
+            }
+            else
+            {
+                <h2>⚠️ Try Again</h2>
+                <p>@Model.msg ?? "Something went wrong!"</p>
+            }
+        }
+        else
+        {
+            <h2>ℹ️ No Response</h2>
+            <p>Unable to fetch prompt details.</p>
+        }
+    </div>
+
+    <script>
+        // ⏳ Wait 5 seconds, then redirect to another action
+        setTimeout(() => {
+            window.location.href = '@Url.Action("PromptIndex", "Spin")';
+        }, 5000);
+    </script>
+</body>
+</html>

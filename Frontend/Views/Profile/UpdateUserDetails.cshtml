@@ -1,0 +1,56 @@
+﻿@model Instagram.Models.Profile
+@{
+    ViewBag.Title = "Edit Profile";
+}
+
+<div class="container mt-4">
+    <h4 class="mb-3">Edit Profile</h4>
+
+    <div class="text-center mb-3">
+        <img src="@(string.IsNullOrEmpty(Model.data.profile) ? Url.Content("~/images/defaultProfilePic.jpg") : Model.data.profile)" class="profile-pic" width="100" height="100" alt="Profile" /><br /><br />
+        <form asp-controller="Profile" asp-action="EditProfile" method="post" enctype="multipart/form-data" id="profileForm">
+            <input type="file" accept="image/png,image/jpeg,image/jpg" id="profileFile" name="profileImg" style="display:none" onchange="document.getElementById('profileForm').submit();" />
+            <label for="profileFile" class="text-primary" style="cursor:pointer; font-weight:500;">
+                Edit picture
+            </label>
+        </form>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-group mb-3">
+            <label>Name</label>
+            @Html.TextBoxFor(m => m.data.fullName, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Username</label>
+            @Html.TextBoxFor(m => m.data.username, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Bio</label>
+            @Html.TextBoxFor(m => m.data.bio, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Gender</label><br />
+
+            @Html.RadioButtonFor(m => m.data.gender, "Male", new { id = "genderMale" })
+            <label for="genderMale">Male</label>
+
+            @Html.RadioButtonFor(m => m.data.gender, "Female", new { id = "genderFemale", @class = "ms-3" })
+            <label for="genderFemale">Female</label>
+
+            @Html.RadioButtonFor(m => m.data.gender, "Other", new { id = "genderOther", @class = "ms-3" })
+            <label for="genderOther">Other</label>
+
+            @Html.RadioButtonFor(m => m.data.gender, "Prefer Not To Say", new { id = "genderPreferNotToSay", @class = "ms-3" })
+            <label for="genderOther">Prefer Not To Say</label>
+        </div>
+
+        <hr />
+
+        <input type="submit" value="Save" asp-action="UpdateUserDetails" class="btn btn-primary w-100" />
+    }
+</div>

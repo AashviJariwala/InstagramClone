@@ -1,0 +1,106 @@
+﻿@model Instagram.Models.UserProfilePageViewModel
+
+<div class="container mt-4" style="max-width:600px;">
+    @for (int i = 0; i < Model.UserPosts.promptData.Count; i++)
+    {
+        var post = Model.UserPosts.promptData[i];
+
+        <div id="post-@post.id" class="card mb-4 shadow-sm post-card">
+            <!-- Post Header -->
+            <div class="card-header d-flex align-items-center bg-white border-0">
+                <img src="@(string.IsNullOrEmpty(Model.UserProfile?.data?.profile)
+                            ? Url.Content("~/images/defaultProfilePic.jpg")
+                            : Model.UserProfile?.data?.profile)"
+                     class="profile-pic" alt="Profile" height="40" width="40" />
+                <div>
+                    <strong>@Model.UserProfile?.data?.username</strong>
+                </div>
+                <div class="ms-auto">
+                    <span class="fw-bold" style="cursor:pointer;">•••</span>
+                </div>
+            </div>
+
+            <!-- Post Media -->
+            @if (post.media != null)
+            {
+                <img src="@(string.IsNullOrEmpty(post.media.url)
+                                ? Url.Content("~/images/defaultProfilePic.jpg")
+                                : post.media.url)"
+                         alt="post"
+                         style="height:300px; width:100%; object-fit:cover;" />
+            }
+
+            <!-- Post Actions -->
+            <div class="card-body pb-2">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="d-flex align-items-center">
+                        <div class="text-center me-3">
+                            <img id="likeIcon_@post.id"
+                                 src="@(post.likeStatus == true
+                                ? Url.Content("~/images/likes_fill.jpg")
+                                : Url.Content("~/images/likes_blank.jpg"))"
+                                 height="40"
+                                 width="43"
+                                 style="cursor:pointer;"
+                                 onclick="likePost(@post.id)" />
+                        </div>
+                        <div class="text-center">
+                            <i class="bi bi-send" style="font-size:1.6rem; cursor:pointer;"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <i class="bi bi-bookmark" style="font-size:1.6rem; cursor:pointer;"></i>
+                    </div>
+                </div>
+
+                <p class="mb-1"><strong id="likeCount_@post.id">@post.likeCnt</strong> likes</p>
+
+                @if (!string.IsNullOrEmpty(post.caption))
+                {
+                    <p class="mb-1"><strong>@post.user.username</strong> @post.caption</p>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var postId = @ViewBag.PostId;
+        var element = document.getElementById("post-" + postId);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+    });
+
+    function likePost(postId) {
+        $.ajax({
+            url: '/LikeComment/Likes',
+            type: 'POST',
+            data: { postId: postId, type: "prompt" },
+            success: function (response) {
+                if (response.success) {
+                    const likeIcon = $("#likeIcon_" + postId);
+                    const likeCount = $("#likeCount_" + postId);
+
+                    // Change image based on likeStatus
+                    if (response.likeStatus === true) {
+                        likeIcon.attr("src", '@Url.Content("~/images/likes_fill.jpg")');
+                    } else {
+                        likeIcon.attr("src", '@Url.Content("~/images/likes_blank.jpg")');
+                    }
+
+                    // Update like count if returned
+                    if (response.likeCount !== undefined) {
+                        likeCount.text(response.likeCount);
+                    }
+                } else {
+                    console.error("Like failed.");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Error:", error);
+            }
+        });
+    }
+</script>

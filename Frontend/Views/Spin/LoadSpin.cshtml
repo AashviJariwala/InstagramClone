@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "LoadSpin";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spinning Wheel</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f8f9fa;
+            margin: 0;
+            overflow: hidden; /* prevent scroll when sliding out */
+        }
+
+        .wheel-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transform: rotate(0deg);
+            transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .spin-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+            .spin-button:active {
+                transform: translate(-50%, -50%) scale(0.95);
+            }
+
+        /* 🎞 Slide-out animation */
+        .slide-out {
+            transform: translateX(-150vw); /* move far left out of view */
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wheel-container" id="wheelContainer">
+        <img src="@Url.Content("~/images/spin.png")" class="wheel" id="wheel" alt="Spinning Wheel" />
+        <button class="spin-button" id="spin">Spin</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const wheel = document.getElementById("wheel");
+            const spinBtn = document.getElementById("spin");
+            const wheelContainer = document.getElementById("wheelContainer");
+            let currentRotation = 0;
+
+            function spinWheel() {
+                const randomDeg = 3600 + Math.floor(Math.random() * 360);
+                currentRotation += randomDeg;
+                wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+                // 🎡 After spinning (4s), slide out
+                setTimeout(() => {
+                    wheelContainer.classList.add("slide-out");
+
+                    // 🚀 After slide animation completes (2s)
+                    setTimeout(() => {
+                        // Redirect to another MVC action
+                        window.location.href = '@Url.Action("AddSpinPrompt", "Spin")';
+                    }, 2000);
+
+                }, 4000); // matches spin animation duration
+            }
+
+            // 🔄 Auto-spin once when page loads
+            setTimeout(spinWheel, 500);
+
+            // 🔘 Manual spin when clicked
+            spinBtn.addEventListener("click", () => {
+                spinBtn.disabled = true;
+                wheelContainer.classList.remove("slide-out"); // reset
+                wheel.style.transform = `rotate(${currentRotation}deg)`;
+                spinWheel();
+                setTimeout(() => {
+                    spinBtn.disabled = false;
+                }, 6000);
+            });
+        });
+    </script>
+
+</body>
+</html>

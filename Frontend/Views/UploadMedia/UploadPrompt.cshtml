@@ -1,0 +1,232 @@
+﻿@model Instagram.Models.Prompt
+
+@{
+    ViewData["Title"] = "Upload";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .post-container {
+            width: 800px;
+            height: 500px;
+            background: white;
+            display: flex;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            overflow: hidden;
+            animation: fadeIn 0.4s ease;
+        }
+
+        /* Left side - image */
+        .left-side {
+            flex: 1.1;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .left-side img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: cover;
+            }
+
+        /* Right side - post details */
+        .right-side {
+            flex: 0.9;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+            .header h3 {
+                font-size: 16px;
+                font-weight: 600;
+                margin: 0;
+            }
+
+            .header a {
+                text-decoration: none;
+                color: #0095f6;
+                font-weight: 600;
+            }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+            .user-info img {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+        .caption-box {
+            width: 100%;
+            height: 120px;
+            border: none;
+            resize: none;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .settings {
+            border-top: 1px solid #ddd;
+            margin-top: auto;
+            padding-top: 10px;
+        }
+
+        .toggle-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 45px;
+            height: 25px;
+        }
+
+            .toggle-switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+
+        .btn-crop {
+            margin-top: 25px;
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-crop:hover {
+                background-color: #0078cc;
+            }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 25px;
+            transition: 0.4s;
+        }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 17px;
+                width: 17px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                border-radius: 50%;
+                transition: 0.4s;
+            }
+
+        input:checked + .slider {
+            background-color: #0095f6;
+        }
+
+            input:checked + .slider:before {
+                transform: translateX(20px);
+            }
+
+        @@keyframes fadeIn {
+            from
+
+        {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        }
+    </style>
+</head>
+<body>
+
+    <form method="post" asp-action="Upload" enctype="multipart/form-data">
+        <div class="post-container">
+            <div class="left-side">
+                <img src="@Url.Content(ViewBag.ImagePath)" alt="Preview" />
+            </div>
+
+            <div class="right-side">
+                <div class="header">
+                    <h3>Create new post</h3>
+                </div>
+
+                <div class="user-info">
+                    <img src="@(string.IsNullOrEmpty(Model.user.profile)
+                                ? Url.Content("~/images/defaultProfilePic.jpg")
+                                : Model.user.profile)"
+                         alt="post"
+                         style="height:40px; width:40px; object-fit:cover;" />
+                    <span>@Model.user.username</span>
+                </div>
+
+                <textarea asp-for="caption" class="caption-box" placeholder="Write a caption..."></textarea>
+
+                <div class="settings">
+                    <div class="toggle-row">
+                        <label>Show likes</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" name="ShowLikes" asp-for="showLikes" checked />
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div>
+                        <button type="submit" id="upload" class="btn-crop">Upload</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

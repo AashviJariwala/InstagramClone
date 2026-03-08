@@ -1,0 +1,96 @@
+﻿@model Instagram.Models.FeedViewModel
+
+<div class="container-fluid p-0" style="max-width:600px;">
+
+    @foreach (var post in Model.promptData)
+    {
+        <div class="reel-container mb-4" style="position:relative; height:100vh; overflow:hidden; background:black;">
+
+            <!-- ================= Bottom Overlay: User Info + Caption + Follow ================= -->
+            <div class="p-3"
+                 style="position:absolute; bottom:20px; left:10px; z-index:10; color:white; width:92%;">
+
+                <div class="d-flex align-items-center mb-2">
+                    <!-- Profile -->
+                    <img src="@(string.IsNullOrEmpty(post?.user?.profile)
+                                ? Url.Content("~/images/defaultProfilePic.jpg")
+                                : post?.user?.profile)"
+                         class="rounded-circle me-2" height="50" width="50" />
+
+                    <!-- Username -->
+                    <span style="font-weight:700; font-size:1.2rem;">@post?.user?.username</span>
+
+                </div>
+
+                <!-- Caption -->
+                @if (!string.IsNullOrEmpty(post.caption))
+                {
+                    <p style="font-size:1.1rem; font-weight:400; margin-left:55px;">
+                        @post.caption
+                    </p>
+                }
+            </div>
+
+            <!-- ================= Fullscreen Video ================= -->
+            @if (post.media != null)
+            {
+                <img src="@(string.IsNullOrEmpty(post.media.url)
+                                ? Url.Content("~/images/defaultProfilePic.jpg")
+                                : post.media.url)"
+                     alt="post"
+                     style="width:100%; height:100%; object-fit:cover;" />
+            }
+
+            <!-- ================= Right Side Action Bar ================= -->
+            <div class="action-bar"
+                 style="position:absolute; right:15px; bottom:120px; display:flex; flex-direction:column; align-items:center; gap:25px; color:white;">
+
+                <!-- Like -->
+                <div class="text-center">
+                    <img id="likeIcon_@post.id"
+                         src="@(post.likeStatus == true
+                                ? Url.Content("~/images/reel_likes_fill.webp")
+                                : Url.Content("~/images/reel_likes_blank.png"))"
+                         height="40"
+                         width="43"
+                         style="cursor:pointer;"
+                         onclick="likePost(@post.id)" /><br />
+                    <p class="mb-1"><strong id="likeCount_@post.id">@post.likeCnt</strong> likes</p>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+<script>
+    function likePost(postId) {
+        $.ajax({
+            url: '/LikeComment/Likes',
+            type: 'POST',
+            data: { postId: postId, type: "prompt" },
+            success: function (response) {
+                if (response.success) {
+                    const likeIcon = $("#likeIcon_" + postId);
+                    const likeCount = $("#likeCount_" + postId);
+
+                    // Change image based on likeStatus
+                         if (response.likeStatus === true) {
+                            likeIcon.attr("src", '@Url.Content("~/images/reel_likes_fill.webp")');
+                        } else {
+                            likeIcon.attr("src", '@Url.Content("~/images/reel_likes_blank.png")');
+                        }
+
+                    // Update like count if returned
+                    if (response.likeCount !== undefined) {
+                        likeCount.text(response.likeCount);
+                    }
+                } else {
+                    console.error("Like failed.");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Error:", error);
+            }
+        });
+    }
+</script>

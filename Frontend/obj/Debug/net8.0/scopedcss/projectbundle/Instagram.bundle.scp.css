@@ -1,0 +1,139 @@
+/* _content/Instagram/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-s29hfuabq2] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-s29hfuabq2] {
+  color: #0077cc;
+}
+
+.btn-primary[b-s29hfuabq2] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-s29hfuabq2], .nav-pills .show > .nav-link[b-s29hfuabq2] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-s29hfuabq2] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-s29hfuabq2] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-s29hfuabq2] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-s29hfuabq2] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-s29hfuabq2] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+body[b-s29hfuabq2] {
+    margin: 0;
+    background: #fafafa;
+}
+
+/* Layout wrapper */
+.wrapper[b-s29hfuabq2] {
+    display: flex;
+}
+
+/* Sidebar fixed on left */
+/* Sidebar fixed on left */
+.sidebar[b-s29hfuabq2] {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh; /* Full height */
+    width: 70px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* pushes bottom icon down */
+    padding: 1rem 0;
+}
+
+.sidebar-top[b-s29hfuabq2] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-bottom[b-s29hfuabq2] {
+    margin-bottom: 1rem;
+    cursor: pointer;
+    padding: 10px; 
+}
+
+/* Feed area */
+.feed[b-s29hfuabq2] {
+    margin-left: 70px; /* same as sidebar width */
+    padding: 20px;
+    width: calc(100% - 70px);
+}
+
+.more-modal-overlay[b-s29hfuabq2] {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+}
+
+/* Dialog menu */
+.more-menu[b-s29hfuabq2] {
+    position: absolute;
+    bottom: 70px;
+    left: 70px;
+    background: #fff;
+    width: 260px;
+    border-radius: 12px;
+    padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+    .more-menu ul[b-s29hfuabq2] {
+        margin: 0;
+        padding: 0;
+    }
+
+    .more-menu li[b-s29hfuabq2] {
+        list-style: none;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+    }
+
+        .more-menu li:hover[b-s29hfuabq2] {
+            background: #f3f3f3;
+        }
+
+    .more-menu hr[b-s29hfuabq2] {
+        margin: 6px 0;
+        border: none;
+        height: 1px;
+        background: #ddd;
+    }

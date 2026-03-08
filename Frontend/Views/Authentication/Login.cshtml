@@ -1,0 +1,43 @@
+﻿@model Instagram.Models.Login
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AuthenticationLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="height:100vh;">
+    <div class="card p-5" style="width: 350px;">
+        <h2 class="text-center mb-4" style="font-family:cursive;">PixieGram</h2>
+        @if (ViewBag.error != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                <i class="bi bi-exclamation-circle me-2"></i>
+                @ViewBag.error
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <form asp-action="Login" asp-controller="Authentication" method="post">
+            <div class="mb-3">
+                <input asp-for="data" class="form-control" placeholder="Enter Username or Email" />
+                <span asp-validation-for="data" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <input asp-for="pass" class="form-control" placeholder="Enter Password" type="password" />
+                <span asp-validation-for="pass" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+
+            <div class="text-center text-muted">OR</div>
+            <div class="text-center mt-3">
+                Don't have an account?
+                <a asp-action="SignUp" asp-controller="Authentication">Sign Up</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,159 @@
+﻿@model Instagram.Models.UserSuggestion
+
+<style>
+    .search-container {
+        width: 100%;
+        background: #fff;
+        padding: 20px 25px;
+        border-radius: 0px;
+        box-shadow: 0 2px 25px rgba(0,0,0,0.1);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .search-title {
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .search-box {
+        width: 100%;
+        padding: 12px 15px;
+        border-radius: 12px;
+        border: none;
+        background: #f3f3f3;
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    .recent-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .clear-all {
+        float: right;
+        color: #2563eb;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .search-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+        .search-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        .search-item .info {
+            flex-grow: 1;
+        }
+
+        .search-item .username {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .search-item .subtitle {
+            font-size: 13px;
+            color: #555;
+        }
+
+    .remove-btn {
+        font-size: 20px;
+        color: #666;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    .profile-pic {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
+</style>
+
+<div class="search-container">
+
+    <div class="search-title">Search</div>
+
+    <input type="text" id="searchBox" class="search-box" placeholder="Search" />
+
+    <div>
+        <span class="recent-title">Recent</span>
+        <span id="clear" class="clear-all" onclick="clear">Clear all</span>
+    </div>
+
+    <hr />
+    <div id="resultContainer">
+            @foreach (var item in Model.data)
+            {
+                <a href="@Url.Action("UserProfile","Search", new { id = item.id })" style="text-decoration:none;color:black">
+                    <div class="search-item">
+                        <img src="@(string.IsNullOrEmpty(item.profile) ? Url.Content("~/images/defaultProfilePic.jpg") : item.profile)" class="profile-pic" />
+                        <div class="info">
+                            <div class="username">@item.username</div>
+                        <div class="subtitle">@(string.IsNullOrEmpty(item.fullName) ? "" : item.fullName) </div>
+                        </div>
+                    </div>
+                </a>
+            }
+      
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $("#searchBox").on("keyup", function () {
+        let query = $(this).val();
+
+        // Call Node.js API
+        $.ajax({
+            url: '/Search/SearchProfiles',
+            type: "GET",
+            data:{query:query},
+            success: function (data) {
+                $("#resultContainer").empty(); // clear old results
+
+                if (data.length === 0) {
+                    $("#resultContainer").html("<p>No results found</p>");
+                    return;
+                }
+
+                // Build UI using the returned data
+                data.forEach(function (item) {
+                    $("#resultContainer").append(`
+                        <a href="/Search/UserProfile?id=${item.id}" style="text-decoration:none;color:black">
+
+                        <div class="search-item">
+                            <img src="${item.profile || '/images/defaultProfilePic.jpg'}" class="profile-pic" />
+                            <div class="info">
+                                <div class="username">${item.username}</div>
+                                <div class="subtitle">${item.fullName || ""}</div>
+                            </div>
+                        </div>
+                        </a>
+                    `);
+                });
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    });
+    $("#clear").on("click", function () {
+        $("#resultContainer").empty();    
+    })
+
+      $("#cancelRecord").on("click", function (id) {
+        $("#resultContainer").empty();
+    })
+</script>

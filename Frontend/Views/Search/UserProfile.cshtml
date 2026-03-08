@@ -1,0 +1,348 @@
+﻿@model Instagram.Models.UserProfilePageViewModel
+
+<head>
+    <style>
+
+        .follow-btn {
+            margin-left: auto;
+            background-color: #3867d6;
+            color: #fff;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .following-btn {
+            margin-left: auto;
+            background-color: #e4e6eb;
+            color: #000;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+            .following-btn:hover {
+                color: black; /* darker gray on hover */
+            }
+
+        .follow-btn:hover {
+            color: white; /* darker gray on hover */
+        }
+    </style>
+</head>
+<div class="profile-container">
+
+    <!-- Profile Header -->
+    <div class="profile-header">
+        <!-- Profile Picture -->
+        <div class="profile-pic">
+            <img src="@(string.IsNullOrEmpty(Model.UserProfile?.data?.profile) ? Url.Content("~/images/defaultProfilePic.jpg") : Model.UserProfile?.data?.profile)" class="profile-pic" alt="Profile" /><br /><br />
+            @if(ViewBag.status=="pending")
+            {
+                <a href="#" class="following-btn" style="text-decoration:none">Requested</a>
+            }
+            else if(ViewBag.status=="accept")
+            {
+                <div class="follow-container">
+                    <button class="following-btn" id="followBtn">
+                        Following
+                        <span class="caret"></span>
+                    </button>
+                    <div class="follow-menu" id="followMenu">
+                        <a href="@Url.Action("Unfollow","Search", new { userId = Model.UserProfile.data.id})" style="text-decoration:none;color:black">Unfollow</a>
+                    </div>
+                </div>
+            }
+            else if (ViewBag.status == "follow back")
+            {
+                <a href="@Url.Action("SendRequest","Search", new { id = Model.UserProfile.data.id})" class="follow-btn" style="text-decoration:none">Follow back</a>
+            }
+            else
+            {
+                <a href="@Url.Action("SendRequest","Search", new { id = Model.UserProfile.data.id})" style="text-decoration:none" class="follow-btn">Follow</a>
+            }
+        </div>
+
+        <!-- Profile Info -->
+        <div class="profile-info">
+            <div class="profile-username">
+                <input type="hidden" id="userid" value="@Model.UserProfile.data.id" />
+                <h6>@Model.UserProfile?.data?.username</h6>
+                <h2>@Model.UserProfile?.data?.fullName</h2>
+                <i class="fa fa-cog"></i>
+            </div>
+            <div class="profile-stats">
+                <span><b>@Model.UserProfile?.postCount</b> Posts</span>
+                <span><b>@Model.UserProfile?.followersCount</b> Followers</span>
+                <span><b>@Model.UserProfile?.followingCount</b> Following</span>
+            </div>
+            <div class="profile-bio">
+                <p>@Model.UserProfile?.data?.bio</p>
+            </div>
+        </div>
+    </div>
+    <div class="profile-tabs">
+        <div class="tab-item active" onclick="loadContent('posts',this)">
+            <img src="~/images/postGrid.png" alt="Post" width="27" height="27" class="mb-3" />
+        </div>
+        <div class="tab-item" onclick="loadContent('reels',this)">
+            <img src="~/images/reel.png" alt="Reels" width="27" height="27" class="mb-3" />
+        </div>
+    </div>
+
+    <hr />
+
+    <div id="contentArea">
+        @Html.Partial("_UserPostPartial", Model.UserPosts)
+    </div>
+</div>
+
+<style>
+    .profile-container {
+        width: 70%;
+        margin: auto;
+        font-family: Arial, sans-serif;
+    }
+
+    /* flex container */
+    .profile-header {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .profile-pic {
+        text-align: center;
+        margin-right: 30px;
+    }
+
+        .profile-pic img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            display: block;
+            margin: auto;
+        }
+
+    .btn-edit {
+        margin-top: 10px;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        background: #fafafa;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .profile-info {
+        flex: 1; /* take remaining space */
+    }
+
+    .profile-username {
+        display: flex;
+        flex-direction: column; /* stack items vertically */
+        align-items: flex-start; /* align to left if needed */
+        gap: 5px; /* space between items */
+    }
+
+
+        .profile-username h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+    .profile-stats {
+        margin: 15px 0;
+        font-size: 14px;
+        display: flex;
+        gap: 25px;
+    }
+
+    .profile-bio {
+        font-size: 14px;
+    }
+
+    /* Posts Grid */
+    .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .post-item img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    /* Followers list */
+    .followers-list {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .follower-item {
+        background: #f2f2f2;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+    /* No posts */
+    .no-posts {
+        grid-column: 1 / -1; /* span all columns */
+        display: flex; /* enable flexbox */
+        flex-direction: column; /* stack icon + text */
+        align-items: center; /* horizontal center */
+        justify-content: center; /* vertical center (inside its row) */
+        text-align: center;
+        margin: 20px 0; /* optional spacing */
+        color: black;
+        font-weight: bolder;
+        font-size: 16px;
+    }
+
+    .profile-tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        padding: 5px 0;
+        gap: 60px; /* space between icons */
+    }
+
+    .tab-item {
+        font-size: 20px;
+        color: #8e8e8e;
+        padding: 10px 0;
+        cursor: pointer;
+        position: relative;
+    }
+
+        .tab-item.active {
+            color: black;
+            font-weight: bold;
+        }
+
+            .tab-item.active::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -1px;
+                height: 2px;
+                background: black;
+            }
+
+    .follow-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .following-btn {
+        background: #f5f5f7;
+        border: none;
+        padding: 8px 18px;
+        border-radius: 18px;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    /* Arrow style */
+    .caret {
+        border: solid #333;
+        border-width: 0 1.5px 1.5px 0;
+        display: inline-block;
+        padding: 3px;
+        margin-top: -1px;
+        transform: rotate(45deg);
+    }
+
+    .follow-menu {
+        position: absolute;
+        top: 42px;
+        left: 0;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        min-width: 130px;
+        display: none;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.16);
+    }
+
+        .follow-menu button {
+            background: none;
+            border: none;
+            padding: 10px 12px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+        }
+
+            .follow-menu button:hover {
+                background: #f3f3f3;
+            }
+
+
+</style>
+<script>
+    function loadContent(type,element) {
+
+          document.querySelectorAll('.tab-item').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        
+        let id=document.getElementById("userid").value;
+
+        // event.currentTarget.classList.add('active');
+            element.classList.add('active');
+
+        let url = "";
+        if (type === "posts") {
+              url = "@Url.Action("LoadPosts", "Search")" + "/" + id;
+            } else if (type === "reels") {
+            url = '@Url.Action("LoadReels", "Search")'+ "/" + id;
+        }
+
+        fetch(url)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById("contentArea").innerHTML = html;
+
+            });
+    }
+
+    const followBtn = document.getElementById("followBtn");
+    const followMenu = document.getElementById("followMenu");
+
+    followBtn.onclick = () => {
+        followMenu.style.display = followMenu.style.display === "block" ? "none" : "block";
+    };
+
+//     $("#unfollowBtn").on("click", function () {
+//         let userId = $("#unfollowId").val();
+//     alert(userId)
+//     $.ajax({
+//         url: "/Search/Unfollow",
+//         method: "GET",
+//         contentType: "application/json",
+//         data: { userId: userId },
+//         success: function (data) {
+//             console.log(data)
+//         },
+//         error: function (err) {
+//                 console.log(err);
+//             }
+//     });
+// });
+
+</script>

@@ -1,0 +1,38 @@
+﻿@model Instagram.Models.SignUp
+
+@{
+    ViewData["Title"] = "VerifyOtp";
+    Layout = "~/Views/Shared/_AuthenticationLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="height:100vh;">
+    <div class="card p-5" style="width: 350px;">
+        <h2 class="text-center mb-4" style="font-family:cursive;">PixieGram</h2>
+        @if (ViewBag.error != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                <i class="bi bi-exclamation-circle me-2"></i>
+                @ViewBag.error
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        <p class="text-center text-muted mb-4">
+            Enter the 5-digit OTP sent to your email.
+        </p>
+
+        <form asp-action="VerifyOtp" method="post">
+            <input asp-for="otp" class="form-control mb-3 text-center" maxlength="5" placeholder="Enter OTP" />
+            <span asp-validation-for="otp" class="text-danger"></span>
+
+            <button type="submit" class="btn btn-primary w-100 mb-3">Verify</button>
+
+            <div class="text-center">
+                Didn’t get the code?
+                <a asp-action="ResendOtp" class="text-decoration-none">Resend</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

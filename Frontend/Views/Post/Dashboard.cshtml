@@ -1,0 +1,503 @@
+﻿@model Instagram.Models.Dashboard
+
+<div class="container mt-4" style="max-width:600px;">
+    <!-- ================= Stories Section ================= -->
+    <div class="position-relative" style="max-width:600px;">
+
+        <!-- LEFT ARROW -->
+        <button class="story-arrow left-arrow" onclick="scrollStories(-200)">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <!-- STORIES WRAPPER -->
+        <div id="storyContainer" class="d-flex mb-3 overflow-hidden" style="scroll-behavior:smooth;">
+
+            @if (Model.data.storyData.id==0)
+            {
+                <div class="me-3 text-center">
+                    <div class="position-relative">
+                        <form asp-controller="UploadMedia" asp-action="UploadStory"
+                        method="post" enctype="multipart/form-data" id="storyForm">
+                            <input type="file" accept="image/*,video/*" id="profileFile"
+                            name="story" style="display:none"
+                            onchange="document.getElementById('storyForm').submit();" />
+
+                            <label for="profileFile" style="cursor:pointer;">
+                                <img src="@(string.IsNullOrEmpty(Model?.profile?.data?.profile)
+                                    ? Url.Content("~/images/defaultProfilePic.jpg")
+                                    : Model.profile.data.profile)"
+                                class="rounded-circle story-profile" />
+                            </label>
+                        </form>
+                        <div class="add-story-btn">
+                            <i class="bi bi-plus"></i>
+                        </div>
+                    </div>
+                    <small class="d-block text-truncate" style="max-width:70px">Your story</small>
+                </div>
+            }
+            else
+            {
+                <div class="me-3 text-center user-story" data-story-id="@Model.data.storyData.id">
+                    <a href="@Url.Action("ViewStory","Post",new { id = Model.data.storyData.id })"
+                       style="text-decoration:none;color:black">
+                        <img src="@(string.IsNullOrEmpty(Model?.profile?.data?.profile)
+                                ? Url.Content("~/images/defaultProfilePic.jpg")
+                                : Model?.profile?.data?.profile)"
+                             class="rounded-circle story-profile"
+                             alt="@Model?.profile?.data?.username"
+                             style="border:3px solid deeppink; padding:2px;" />
+                    </a>
+                    <small class="d-block text-truncate" style="max-width:70px">Your story</small>
+                </div>
+            }
+
+            @foreach (var story in Model?.UserStories?.stories)
+            {
+                <div class="me-3 text-center user-story" data-story-id="@story.id">
+                    <a href="@Url.Action("ViewStory","Post",new { id = story.id })"
+                       style="text-decoration:none;color:black">
+                        <img src="@(string.IsNullOrEmpty(story?.user?.profile)
+                                ? Url.Content("~/images/defaultProfilePic.jpg")
+                                : story?.user?.profile)"
+                             class="rounded-circle story-profile"
+                             alt="@story.user.username"
+                             style="border:3px solid deeppink; padding:2px;" />
+                    </a>
+                    <small class="d-block text-truncate" style="max-width:70px">@story.user.username</small>
+                </div>
+            }
+        </div>
+
+        <!-- RIGHT ARROW -->
+        <button class="story-arrow right-arrow" onclick="scrollStories(200)">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+
+    </div>
+
+
+    <!-- ================= Posts Section ================= -->
+    @foreach (var post in Model.UserPosts.data)
+    {
+        <div class="card mb-4 shadow-sm">
+
+            <!-- Post Header -->
+            <div class="card-header d-flex align-items-center bg-white border-0">
+                <img src="@(string.IsNullOrEmpty(post?.user?.profile)
+                            ? Url.Content("~/images/defaultProfilePic.jpg")
+                            : post?.user?.profile)" height="40" width="40" />&nbsp;&nbsp;&nbsp;
+                <div>
+                    <strong>@post?.user?.username</strong><br />
+                    @* Location block (keep commented if not needed) *@
+                    @* @if (!string.IsNullOrEmpty(post.location))  
+                    {  
+                        <small class="text-muted">@post.location</small>  
+                    } *@ 
+                    </div>
+                <div class="ms-auto">
+                    <span class="fw-bold" style="cursor:pointer;">•••</span>
+                </div>
+            </div>
+
+            <!-- Post Media -->
+            @if (post.media != null)
+            {
+                foreach (var item in post.media)
+                {
+                    <img src="@(string.IsNullOrEmpty(item.url)
+                                ? Url.Content("~/images/defaultProfilePic.jpg")
+                                : item.url)"
+                         alt="post"
+                         style="height:300px; width:575px; object-fit:cover;" />
+                }
+            }
+
+            <!-- Post Actions -->
+            <div class="card-body pb-2">
+
+                <!-- Instagram Style Action Bar -->
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="d-flex align-items-center">
+                        <!-- Like -->
+                        <div class="text-center me-3">
+                            <img id="likeIcon_@post.id"
+                                 src="@(post.likeStatus == true
+                                ? Url.Content("~/images/likes_fill.jpg")
+                                : Url.Content("~/images/likes_blank.jpg"))"
+                                 height="40"
+                                 width="43"
+                                 style="cursor:pointer;"
+                                 onclick="likePost(@post.id)" />
+                        </div>
+
+                        <!-- Comment -->
+                        <div class="text-center me-3">
+                            <i class="bi bi-chat"
+                               style="font-size:1.6rem; cursor:pointer;"
+                               onclick="openCommentModal(@post.id)">
+                            </i>
+                            <small class="text-muted" style="font-size:0.80rem;color:black;font-weight:bolder">@post.commentCnt</small>
+                        </div>
+
+                        <!-- Share -->
+                        <div class="text-center">
+                            <i class="bi bi-send" style="font-size:1.6rem; cursor:pointer;"></i>
+                        </div>
+                    </div>
+
+                    <!-- Bookmark -->
+                    <div>
+                        <i class="bi bi-bookmark" style="font-size:1.6rem; cursor:pointer;"></i>
+                    </div>
+                </div>
+
+                <!-- Likes -->
+                <p class="mb-1"><strong id="likeCount_@post.id">@post.likeCnt</strong> likes</p>
+
+                <!-- Caption -->
+                @if (!string.IsNullOrEmpty(post.caption))
+                {
+                    <p class="mb-1"><strong>@post?.user?.username</strong> @post.caption</p>
+                }
+
+                <!-- Tagged People -->
+                @* Keep disabled unless tagPeople is implemented *@
+                @* @if (!string.IsNullOrEmpty(post.tagPeople))  
+                {  
+                    <p class="text-muted mb-1">Tagged: @post.tagPeople</p>  
+                } *@
+            </div>
+        </div>
+    }
+
+    <!-- ================= COMMENT POPUP MODAL ================= -->
+    <div id="commentModal" class="comment-modal">
+        <div class="comment-modal-content">
+
+            <!-- Header -->
+            <div class="modal-header">
+                <h5>Comments</h5>
+                <span class="close-modal" onclick="closeCommentModal()">✕</span>
+            </div>
+
+            <!-- Comments Section -->
+            <div id="commentList" class="comments-area">
+                <!-- Comments loaded dynamically -->
+            </div>
+
+            <!-- Comment Input -->
+            <div class="comment-input-area">
+                <input type="text" id="commentText" class="comment-input" placeholder="Add a comment..." />
+                <button class="post-btn" onclick="submitComment()">Post</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .story-profile {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        padding: 2px;
+        border: 3px solid gray; /* default gray */
+        transition: all 0.3s ease;
+    }
+
+    /* Pink border for unseen stories (initial) */
+    .user-story .story-profile {
+        border-color: deeppink;
+    }
+
+    .story-arrow {
+        position: absolute;
+        top: 25px;
+        z-index: 10;
+        background: white;
+        border: none;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        cursor: pointer;
+    }
+
+    .left-arrow {
+        left: -10px;
+    }
+
+    .right-arrow {
+        right: -10px;
+    }
+
+    .story-arrow i {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    #storyContainer::-webkit-scrollbar {
+        display: none;
+    }
+
+    .add-story-btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: #0095f6;
+        color: white;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid white;
+        font-size: 1rem;
+    }
+
+    .comment-modal {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0,0,0,0.55);
+        z-index: 9999;
+    }
+
+    .comment-modal-content {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%; /* smaller width */
+        max-width: 420px; /* prevents stretching on large screens */
+        max-height: 70%;
+        background: #fff;
+        border-radius: 20px;
+        padding: 15px;
+        animation: slideUp 0.35s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .comments-area {
+        overflow-y: auto;
+        flex-grow: 1;
+        padding: 10px 0;
+    }
+
+    .comment-input-area {
+        display: flex;
+        border-top: 1px solid #ddd;
+        padding-top: 10px;
+    }
+
+    .comment-input {
+        flex-grow: 1;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+    }
+
+    .post-btn {
+        background: none;
+        border: none;
+        color: #0095f6;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .close-modal {
+    cursor: pointer;
+    z-index: 10000;
+    position: relative;
+}
+
+</style>
+
+<script>
+    
+
+        function likePost(postId) {
+        $.ajax({
+            url: '/LikeComment/Likes',
+            type: 'POST',
+            data: { postId: postId, type: "post" },
+            success: function (response) {
+                if (response.success) {
+                    const likeIcon = $("#likeIcon_" + postId);
+                    const likeCount = $("#likeCount_" + postId);
+
+                    // Change image based on likeStatus
+                        if (response.likeStatus === true) {
+                            likeIcon.attr("src", '@Url.Content("~/images/likes_fill.jpg")');
+                        } else {
+                            likeIcon.attr("src", '@Url.Content("~/images/likes_blank.jpg")');
+                        }
+
+                    // Update like count if returned
+                    if (response.likeCount !== undefined) {
+                        likeCount.text(response.likeCount);
+                    }
+                } else {
+                    console.error("Like failed.");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Error:", error);
+            }
+        });
+    }
+     function likePost(postId) {
+        $.ajax({
+            url: '/LikeComment/Likes',
+            type: 'POST',
+            data: { postId: postId, type: "post" },
+            success: function (response) {
+                if (response.success) {
+                    const likeIcon = $("#likeIcon_" + postId);
+                    const likeCount = $("#likeCount_" + postId);
+
+                    // Change image based on likeStatus
+                        if (response.likeStatus === true) {
+                            likeIcon.attr("src", '@Url.Content("~/images/likes_fill.jpg")');
+                        } else {
+                            likeIcon.attr("src", '@Url.Content("~/images/likes_blank.jpg")');
+                        }
+
+                    // Update like count if returned
+                    if (response.likeCount !== undefined) {
+                        likeCount.text(response.likeCount);
+                    }
+                } else {
+                    console.error("Like failed.");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Error:", error);
+            }
+        });
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        // Apply previously viewed stories from localStorage
+        document.querySelectorAll(".user-story").forEach(story => {
+            const storyId = story.dataset.storyId;
+            if (localStorage.getItem("viewedStory_" + storyId) === "true") {
+                story.querySelector(".story-profile").style.borderColor = "gray";
+            }
+        });
+
+        // On story click: mark as viewed
+        document.querySelectorAll(".user-story a").forEach(link => {
+            link.addEventListener("click", function() {
+                const parent = this.closest(".user-story");
+                const storyId = parent.dataset.storyId;
+
+                // Store in localStorage
+                localStorage.setItem("viewedStory_" + storyId, "true");
+
+                // Change border to gray immediately
+                parent.querySelector(".story-profile").style.borderColor = "gray";
+            });
+        });
+    });
+
+    function scrollStories(amount) {
+        const container = document.getElementById("storyContainer");
+        container.scrollLeft += amount;
+    }
+     let currentPostId = null;
+
+    function openCommentModal(postId) {
+        currentPostId = postId;  // 🔥 store the postId for later use
+
+        document.getElementById("commentModal").style.display = "block";
+
+        $.ajax({
+            url: '/LikeComment/GetComments',
+            type: 'GET',
+            data: { postId: postId },
+            success: function (res) {
+
+                let html = "";
+
+                res.comments.forEach(c => {
+                    let profile = c.user.profile ?? "/images/defaultProfilePic.jpg";
+
+                    html += `
+                        <div class="d-flex mb-2">
+                            <img src="${profile}" width="35" height="35" class="rounded-circle me-2" />
+                            <div>
+                                <strong>${c.user.username}</strong> ${c.commentText}
+                            </div>
+                        </div>`;
+                });
+
+                $("#commentList").html(html);
+            }
+        });
+    }
+
+        function submitComment() {
+        const text = $("#commentText").val().trim();
+        if (text === "") return;
+
+        $.ajax({
+            url: '/LikeComment/AddComment',
+            type: 'POST',
+            data: {
+                postId: currentPostId,   
+                commentText: text
+            },
+            success: function (res) {
+                if (res.success) {
+
+                    // Append new comment instantly
+                    const profile = res.comment.user.profile ?? "/images/defaultProfilePic.jpg";
+
+                    const newComment = `
+                        <div class="d-flex mb-2">
+                            <img src="${profile}" width="35" height="35" class="rounded-circle me-2" />
+                            <div>
+                                <strong>${res.comment.user.username}</strong> ${text}
+                            </div>
+                        </div>
+                    `;
+
+                    $("#commentList").append(newComment);
+
+                    // Clear input
+                    $("#commentText").val("");
+                }
+            }
+        });
+    }
+
+
+    function closeCommentModal() {
+        document.getElementById("commentModal").style.display = "none";
+    }
+        document.getElementById("commentModal").addEventListener("click", function (e) {
+        if (e.target.id === "commentModal") {
+            closeCommentModal();
+        }
+    });
+
+</script>
+
+

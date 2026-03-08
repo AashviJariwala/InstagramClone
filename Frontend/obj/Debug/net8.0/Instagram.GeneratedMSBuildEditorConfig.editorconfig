@@ -1,0 +1,177 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Instagram
+build_property.RootNamespace = Instagram
+build_property.ProjectDir = E:\My_work\SEM7\Project\Instagram\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\My_work\SEM7\Project\Instagram
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Authentication/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGljYXRpb25cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Authentication/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGljYXRpb25cU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Authentication/Suggestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGljYXRpb25cU3VnZ2VzdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Authentication/VerifyOtp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGljYXRpb25cVmVyaWZ5T3RwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Post/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Post/ViewStory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxWaWV3U3RvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Profile/MyPosts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxNeVBvc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Profile/MyPrompts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxNeVByb21wdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Profile/MyReels.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxNeVJlZWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Profile/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Profile/ShowPrivacyStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxTaG93UHJpdmFjeVN0YXR1cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Profile/UpdateUserDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxVcGRhdGVVc2VyRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Reel/Reels.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVlbFxSZWVscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Request/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Request/PendingRequestList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxQZW5kaW5nUmVxdWVzdExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Search/searchProfiles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXHNlYXJjaFByb2ZpbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Search/UserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXFVzZXJQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Shared/_AuthenticationLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BdXRoZW50aWNhdGlvbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Shared/_PostPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qb3N0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Shared/_PromptPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9tcHRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Shared/_ReelPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9SZWVsUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Shared/_UserPostPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VyUG9zdFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Shared/_UserReelPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VyUmVlbFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Spin/AddSpinPrompt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BpblxBZGRTcGluUHJvbXB0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Spin/LoadSpin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BpblxMb2FkU3Bpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Spin/PromptIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BpblxQcm9tcHRJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/UploadMedia/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkTWVkaWFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/UploadMedia/Crop.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkTWVkaWFcQ3JvcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/UploadMedia/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkTWVkaWFcVXBsb2FkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/UploadMedia/UploadPrompt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkTWVkaWFcVXBsb2FkUHJvbXB0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/My_work/SEM7/Project/Instagram/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-s29hfuabq2

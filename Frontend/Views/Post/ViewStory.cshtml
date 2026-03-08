@@ -1,0 +1,152 @@
+﻿@model Instagram.Models.ResponseData
+@{
+    ViewData["Title"] = "ViewStory";
+    Layout = null;
+}
+
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .story-container {
+        background-color: #111;
+        width: 360px;
+        height: 640px;
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+        position: relative;
+    }
+
+    /* Progress Bar (Timer) */
+    .story-timer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background-color: white;
+        width: 0%;
+        transition: width linear;
+        z-index: 10;
+    }
+
+    .story-header {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 2;
+        position: relative;
+    }
+
+        .story-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .story-header span {
+            font-weight: 600;
+        }
+
+    .story-media {
+        flex: 1;
+        position: relative;
+    }
+
+        .story-media img,
+        .story-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .story-caption {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 12px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    /* ✖ Close Button — positioned top right corner INSIDE story */
+    .close-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: none;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        line-height: 28px;
+        text-align: center;
+        transition: all 0.3s ease;
+        z-index: 25;
+    }
+
+        .close-btn:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            transform: scale(1.1);
+        }
+
+</style>
+
+<div class="story-container">
+    <div class="story-timer" id="storyTimer"></div>
+
+    <!-- ✖ Close button at top-right -->
+    <button class="close-btn" onclick="window.location.href='/Post/Dashboard'">&times;</button>
+
+    <div class="story-header">
+        <img src="@(string.IsNullOrEmpty(Model.storyData.user.profile)
+                        ? Url.Content("~/images/defaultProfilePic.jpg")
+                        : Model.storyData.user.profile)" height="40" width="40" />
+        <span>@Model.storyData.user.username</span>
+    </div>
+
+    <div class="story-media">
+        @if (Model.storyData.media.resourceType == "video")
+        {
+            <video controls autoplay muted loop>
+                <source src="@Model.storyData.media.url" type="video/mp4" />
+            </video>
+        }
+        else
+        {
+            <img src="@Model.storyData.media.url" alt="story" />
+        }
+    </div>
+</div>
+
+<script>
+    // Timer configuration (in milliseconds)
+    const duration = 5000; // 5 seconds per story
+    const timerBar = document.getElementById("storyTimer");
+
+    // Animate progress bar
+    timerBar.style.transition = `width ${duration}ms linear`;
+    setTimeout(() => {
+        timerBar.style.width = "100%";
+    }, 100);
+
+    // Timeout action — go to next story
+       setTimeout(() => {
+        window.location.href = "/Post/Dashboard";
+    }, duration);
+</script>

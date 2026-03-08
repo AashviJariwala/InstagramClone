@@ -1,0 +1,31 @@
+﻿@model Instagram.Models.FeedViewModel
+
+<div class="posts-grid">
+    @if (Model != null && (Model.data != null && Model.data.Any()))
+    {
+        foreach (var post in Model.data)
+        {
+            if (post.media != null)
+            {
+                foreach (var item in post.media)
+                {
+                    <div class="post-item">
+                        <a href="@Url.Action("Profile","Profile", new { id = post.id ,type="post"})"
+                           style="text-decoration:none;color:black">
+
+                            <img src="@(string.IsNullOrEmpty(item.url) ? Url.Content("~/images/defaultProfilePic.jpg") : item.url)"
+                             class="card-img-top" alt="post" />
+                         </a>
+                    </div>
+                }
+            }
+        }
+    }
+    else
+    {
+        <div class="no-posts">
+            <img src="~/images/noPostYet.png" height="150" width="150" />
+            <p>No posts yet</p>
+        </div>
+    }
+</div>

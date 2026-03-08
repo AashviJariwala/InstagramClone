@@ -1,0 +1,230 @@
+﻿@{
+    ViewData["Title"] = "Create";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .create-box {
+            background: #fff;
+            width: 420px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            position: relative;
+            padding: 30px 20px 50px;
+            animation: fadeIn 0.5s ease;
+        }
+
+            /* Top bar */
+            .create-box .top-bar {
+                position: absolute;
+                top: 10px;
+                left: 15px;
+                right: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+        .three-dots {
+            font-size: 22px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Dropdown menu */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 35px;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 140px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            text-align: left;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+            .dropdown a {
+                display: block;
+                padding: 10px 15px;
+                text-decoration: none;
+                color: #333;
+                font-size: 14px;
+                transition: background-color 0.2s ease;
+            }
+
+                .dropdown a:hover {
+                    background-color: #f0f0f0;
+                }
+
+                /* --- Active Selection Highlight --- */
+                .dropdown a.active {
+                    background-color: #e8f3ff;
+                    color: #0095f6;
+                    font-weight: 600;
+                }
+
+        round-color: #f0f0f0;
+                }
+
+        .upload-area {
+            margin-top: 40px;
+        }
+
+            .upload-area img {
+                width: 100px;
+                height:100px;
+                opacity: 0.6;
+            }
+
+            .upload-area p {
+                margin-top: 15px;
+                font-size: 16px;
+                color: #555;
+            }
+
+        .btn-upload {
+            margin-top: 20px;
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-upload:hover {
+                background-color: #0078cc;
+            }
+
+        @@keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <form method="post" asp-action="Create" enctype="multipart/form-data">
+
+    <div class="overlay">
+        <div class="create-box">
+            <div class="top-bar">
+                <a asp-controller="Post" asp-action="Dashboard" class="back-btn" style="text-decoration:none;color:black">←</a>
+                <span class="three-dots" onclick="toggleDropdown()">⋮</span>
+                <div class="dropdown" id="dropdownMenu">
+                    <a href="#" onclick="selectType('post')">Post</a>
+                    <a href="#" onclick="selectType('reel')">Reel</a>
+                    <a href="#" onclick="selectType('prompt')">Prompt</a>
+                </div>
+                <input type="hidden" id="SelectedType" name="SelectedType" value="post" />
+
+            </div>
+            <h3 style="margin-top: 10px;">Create new post</h3>
+
+            <div class="upload-area">
+                    <img src="~/images/upload.jpg" alt="Upload Icon" />
+                    <p>Drag photos and videos here</p>
+                    <input type="file" name="file" id="fileInput" accept="image/*,video/*" hidden />
+                    <button type="button" class="btn-upload" onclick="document.getElementById('fileInput').click()">
+                        Select from computer
+                    </button>
+
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+    <script>
+
+              const fileInput = document.getElementById("fileInput");
+        const form = fileInput.closest("form");
+
+        // When user selects a file, auto-submit the form
+        fileInput.addEventListener("change", function () {
+            if (fileInput.files.length > 0) {
+                form.submit();
+            }
+        });
+           // Dropdown toggle
+        function toggleDropdown() {
+            const menu = document.getElementById("dropdownMenu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+              function selectType(type) {
+            // Update hidden input value
+            document.getElementById("SelectedType").value = type;
+            if (type === "post") {
+                fileInput.setAttribute("accept", "image/*");
+            }
+            else if (type === "reel") {
+                fileInput.setAttribute("accept", "video/*");
+            }
+            else if (type === "prompt") {
+                fileInput.setAttribute("accept", "image/*"); 
+            }
+
+            // Hide dropdown
+            document.getElementById("dropdownMenu").style.display = "none";
+
+            // Highlight selected item (optional)
+            document.querySelectorAll("#dropdownMenu a").forEach(a => a.classList.remove("active"));
+            event.target.classList.add("active");
+
+            console.log("Selected type:", type);
+        }
+
+        // close dropdown when clicking outside
+        window.onclick = function (e) {
+            if (!e.target.matches('.three-dots')) {
+                const dropdown = document.getElementById("dropdownMenu");
+                if (dropdown.style.display === "block") {
+                    dropdown.style.display = "none";
+                }
+            }
+        };
+    </script>
+</body>
+</html>

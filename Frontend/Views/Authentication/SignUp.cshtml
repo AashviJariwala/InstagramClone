@@ -1,0 +1,52 @@
+﻿@model Instagram.Models.SignUp
+@{
+    ViewData["Title"] = "Sign Up";
+    Layout = "~/Views/Shared/_AuthenticationLayout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="height:100vh;">
+    <div class="card p-5 shadow" style="width: 350px;">
+        <h2 class="text-center mb-4" style="font-family:cursive;">PixieGram</h2>
+        @if (ViewBag.error != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                <i class="bi bi-exclamation-circle me-2"></i>
+                @ViewBag.error
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <form asp-action="SignUp" method="post" novalidate>
+            <div class="mb-3">
+                <input asp-for="phoneNumber" class="form-control" placeholder="Phone number" />
+                <span asp-validation-for="phoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <input asp-for="email" class="form-control" placeholder="Email" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <input asp-for="username" class="form-control" placeholder="Username" />
+                <span asp-validation-for="username" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <input asp-for="password" type="password" class="form-control" placeholder="Password" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mb-3">Sign Up</button>
+
+            <div class="text-center mt-3">
+                Already an account?
+                <a asp-controller="Authentication" asp-action="Login">Login</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

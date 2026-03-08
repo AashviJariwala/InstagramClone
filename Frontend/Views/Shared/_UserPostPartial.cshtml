@@ -1,0 +1,44 @@
+﻿@model Instagram.Models.FeedViewModel
+
+@if (ViewBag.privacy == "1" && (ViewBag.status == null || ViewBag.status == "pending" || ViewBag.status == "follow back" || ViewBag.status == "reject"))
+{
+    <div class="card border-0 text-center" style="margin-top:100px;">
+        <div class="card-body">
+            <i class="bi bi-lock-fill" style="font-size:35px;"></i>
+            <h5 class="mt-2 fw-semibold">This account is private</h5>
+            <p class="text-muted">Follow to see their photos and videos.</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="posts-grid">
+        @if (Model != null && (Model.data != null && Model.data.Any()))
+        {
+            foreach (var post in Model.data)
+            {
+                if (post.media != null)
+                {
+                    foreach (var item in post.media)
+                    {
+                        <div class="post-item">
+                            <a href="@Url.Action("UserProfile","Search", new { id=post.user.id,type="post",pid=post.id})"
+                               style="text-decoration:none;color:black">
+
+                                <img src="@(string.IsNullOrEmpty(item.url) ? Url.Content("~/images/defaultProfilePic.jpg") : item.url)"
+                                     class="card-img-top" alt="post" />
+                            </a>
+                        </div>
+                    }
+                }
+            }
+        }
+        else
+        {
+            <div class="no-posts">
+                <img src="~/images/noPostYet.png" height="150" width="150" />
+                <p>No posts yet</p>
+            </div>
+        }
+    </div>
+}

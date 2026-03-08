@@ -1,0 +1,31 @@
+﻿@model Instagram.Models.FeedViewModel
+
+<div class="posts-grid">
+    @if (Model != null && (Model.data != null && Model.data.Any()))
+    {
+        foreach (var post in Model.data)
+        {
+            if (post.media != null)
+            {
+                foreach (var item in post.media)
+                {
+                    <div class="post-item">
+                    <a href="@Url.Action("Profile","Profile", new { id = post.id ,type="reel"})">
+                        <video width="100%" height="230">
+                            <source src="@item.url" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </a>
+                    </div>
+                }
+            }
+        }
+    }
+    else
+    {
+        <div class="no-posts">
+            <img src="~/images/noPostYet.png" height="150" width="150" />
+            <p>No reels yet</p>
+        </div>
+    }
+</div>
